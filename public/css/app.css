@@ -1,0 +1,46 @@
+body {
+    background-color: #98c1d9;
+}
+
+.t-1 {
+    color: #e0fbfc;
+}
+
+.bg-1 {
+    background-color: #e0fbfc;
+}
+
+.t-2 {
+    color: #98c1d9;
+}
+
+.bg-2 {
+    background-color: #98c1d9;
+}
+
+.t-3 {
+    color: #3d5a80;
+}
+
+.bg-3 {
+    background-color: #3d5a80;
+}
+
+.t-4 {
+    color: #293241;
+}
+
+.bg-4 {
+    background-color: #293241;
+}
+
+.sidebar{
+    background-color: #293241;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+
+.dashboard-card{
+    min-height: 600px;
+}
