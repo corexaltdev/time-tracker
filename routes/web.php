@@ -14,6 +14,9 @@ Route::get('/ad-manage-account', function () {
     return view('page.admin.ad-manage-account');
 });
 
+Route::get('/cl-view-project', function () {
+    return view('page.client.cl-view-project');
+});
 
 Route::get('/dev-modify-info', function () {
     return view('page.developer.dev-modify-info');
