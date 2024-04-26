@@ -21,3 +21,16 @@ Route::get('/cl-view-project', function () {
 Route::get('/dev-modify-info', function () {
     return view('page.developer.dev-modify-info');
 });
+
+Route::get('/man-clients', function () {
+    return view('page.manager.man-clients');
+});
+
+Route::get('/man-projects', function () {
+    return view('page.manager.man-projects');
+});
+
+
+Route::get('/man-tasks', function () {
+    return view('page.manager.man-tasks');
+});
