@@ -3,11 +3,8 @@
 @section('other')
 <div class="container">
     <div class="row">
-        <div class="col-2">
+        <div class="col-4">
             <h1 class="t-4">Tasks</h1>
-        </div>
-        <div class="col-1">
-            <button class="btn t-2 bg-4 btn-md mt-2">Create</button>
         </div>
     </div>
     <div class="row">
@@ -41,7 +38,7 @@
                                 </td>
                                 <td>Feed</td>
                                 <td>
-                                    <button class="btn t-1 bg-4 btn-md mt-2">Edit</button>
+                                    <button class="btn t-1 bg-4 btn-md mt-2">Update</button>
                                 </td>
                             </tr>
                             <tr>
@@ -54,7 +51,7 @@
                                 </td>
                                 <td>Feed</td>
                                 <td>
-                                    <button class="btn t-1 bg-4 btn-md mt-2">Edit</button>
+                                    <button class="btn t-1 bg-4 btn-md mt-2">Update</button>
                                 </td>
                             </tr>
                           </tbody>

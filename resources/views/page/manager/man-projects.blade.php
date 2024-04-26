@@ -14,10 +14,11 @@
                     <table class="table">
                         <thead>
                             <tr>
-                              <th scope="col">Task</th>
+                              <th scope="col">Project</th>
                               <th scope="col">Description</th>
                               <th scope="col">Status</th>
                               <th scope="col">Feedback</th>
+                              <th scope="col">Project Status</th>
                               <th scope="col">Action</th>
                             </tr>
                           </thead>
@@ -31,6 +32,7 @@
                                     </div>
                                 </td>
                                 <td>Feed</td>
+                                <td>Pending</td>
                                 <td>
                                     <button class="btn t-1 bg-4 btn-md mt-2">Update</button>
                                 </td>

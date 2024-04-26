@@ -18,6 +18,14 @@ Route::get('/cl-view-project', function () {
     return view('page.client.cl-view-project');
 });
 
+Route::get('/dev-tasks', function () {
+    return view('page.developer.dev-tasks');
+});
+
+Route::get('/dev-update-tasks', function () {
+    return view('page.developer.dev-update-tasks');
+});
+
 Route::get('/dev-modify-info', function () {
     return view('page.developer.dev-modify-info');
 });
@@ -26,11 +34,30 @@ Route::get('/man-clients', function () {
     return view('page.manager.man-clients');
 });
 
+Route::get('/man-create-client', function () {
+    return view('page.manager.man-create-client');
+});
+
+Route::get('/man-create-task', function () {
+    return view('page.manager.man-create-task');
+});
+
+Route::get('/man-edit-client', function () {
+    return view('page.manager.man-edit-client');
+});
+
+Route::get('/man-edit-task', function () {
+    return view('page.manager.man-edit-task');
+});
+
 Route::get('/man-projects', function () {
     return view('page.manager.man-projects');
 });
 
-
 Route::get('/man-tasks', function () {
     return view('page.manager.man-tasks');
+});
+
+Route::get('/man-update-project', function () {
+    return view('page.manager.man-update-project');
 });

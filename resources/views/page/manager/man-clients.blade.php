@@ -3,7 +3,7 @@
 @section('other')
 <div class="container">
     <div class="row">
-        <div class="col-4">
+        <div class="col-2">
             <h1 class="t-4">Clients</h1>
         </div>
         <div class="col-1">
@@ -19,6 +19,7 @@
                             <tr>
                               <th scope="col">Clients</th>
                               <th scope="col">Email</th>
+                              <th scope="col">Status</th>
                               <th scope="col">Action</th>
                             </tr>
                           </thead>
@@ -26,6 +27,7 @@
                             <tr>
                                 <td>testDev</td>
                                 <td>developer@gmail.com</td>
+                                <td>Available</td>
                                 <td>
                                     <button class="btn t-1 bg-4 btn-md mt-2">Edit</button>
                                     <button class="btn t-1 bg-4 btn-md mt-2">Suspend</button>
