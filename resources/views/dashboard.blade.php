@@ -1,17 +1,48 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layout.sidebarlayout')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+@section('other')
+<div class="container">
+    <div class="row">
+        <h1 class="t-4">Dashboard</h1>
+    </div>
+    <div class="row">
+        <h3 class="t-3">Developer Functionalities</h3>
+    </div>
+    <div class="row">
+        <div class="card bg-4 dashboard-card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="btn card bg-1">
+                            <div class="card-body">
+                                <h5 class="t-4"> Modify Info </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="btn card bg-1">
+                            <div class="card-body">
+                                <h5 class="t-4"> Chat </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="btn card bg-1">
+                            <div class="card-body">
+                                <h5 class="t-4"> Tasks </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="btn card bg-1">
+                            <div class="card-body">
+                                <h5 class="t-4"> Logout </h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>
+@endsection
