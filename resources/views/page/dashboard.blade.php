@@ -14,55 +14,42 @@
                 <div class="row">
                     @if ($role === 'admin')
                     <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Manage Accounts </h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Logout </h5>
-                            </div>
-                        </div>
+                        <form method="GET" action="{{ route('ad-manage-account') }}" class="btn card bg-1">
+                            @csrf
+                            <button type="submit" class="card-body btn">Manage Account</button>
+                        </form>
                     </div>
                     @elseif ($role === 'manager')
                     <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Manage Projects </h5>
-                            </div>
-                        </div>
+                        <form method="GET" action="{{ route('man-projects') }}" class="btn card bg-1">
+                            @csrf
+                            <button type="submit" class="card-body btn">Manage Projects</button>
+                        </form>
                     </div>
                     <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Manage Tasks </h5>
-                            </div>
-                        </div>
+                        <form method="GET" action="{{ route('man-tasks') }}" class="btn card bg-1">
+                            @csrf
+                            <button type="submit" class="card-body btn">Manage Tasks</button>
+                        </form>
                     </div>
                     <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Manage Clients </h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Logout </h5>
-                            </div>
-                        </div>
+                        <form method="GET" action="{{ route('man-clients') }}" class="btn card bg-1">
+                            @csrf
+                            <button type="submit" class="card-body btn">Manage Clients</button>
+                        </form>
                     </div>
                     @elseif ($role === 'developer')
                     <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Modify Info </h5>
-                            </div>
-                        </div>
+                        <form method="GET" action="{{ route('dev-modify-info') }}" class="btn card bg-1">
+                            @csrf
+                            <button type="submit" class="card-body btn">Modify Info</button>
+                        </form>
+                    </div>
+                    <div class="col-3">
+                        <form method="GET" action="{{ route('dev-tasks') }}" class="btn card bg-1">
+                            @csrf
+                            <button type="submit" class="card-body btn">Tasks</button>
+                        </form>
                     </div>
                     <div class="col-3">
                         <div class="btn card bg-1">
@@ -71,43 +58,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Tasks </h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Logout </h5>
-                            </div>
-                        </div>
-                    </div>
                     @else
                     <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Request Project </h5>
-                            </div>
-                        </div>
+                        <form method="GET" action="{{ route('cl-request-project') }}" class="btn card bg-1">
+                            @csrf
+                            <button type="submit" class="card-body btn">Request Project</button>
+                        </form>
                     </div>
                     <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> View Project </h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Logout </h5>
-                            </div>
-                        </div>
+                        <form method="GET" action="{{ route('cl-view-project') }}" class="btn card bg-1">
+                            @csrf
+                            <button type="submit" class="card-body btn">View Project</button>
+                        </form>
                     </div>
                     @endif
+                    <div class="col-3">
+                        <form method="POST" action="{{ route('logout') }}" class="btn card bg-1">
+                            @csrf
+                            <button type="submit" class="card-body btn">Logout</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

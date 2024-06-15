@@ -29,19 +29,6 @@
                           </thead>
                           <tbody>
                             <tr>
-                                <td>Add New Page</td>
-                                <td>blablablablab</td>
-                                <td> 
-                                    <div class="progress" style="height: 20px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 50%;" ></div>
-                                    </div>
-                                </td>
-                                <td>Feed</td>
-                                <td>
-                                    <button class="btn t-1 bg-4 btn-md mt-2">Update</button>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td>Delete Old Button</td>
                                 <td>blablablablab</td>
                                 <td> 
@@ -51,7 +38,10 @@
                                 </td>
                                 <td>Feed</td>
                                 <td>
-                                    <button class="btn t-1 bg-4 btn-md mt-2">Update</button>
+                                    <form method="GET" action="{{ route('dev-update-tasks') }}" style="display:inline;">
+                                        @csrf
+                                        <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Update</button>
+                                    </form>
                                 </td>
                             </tr>
                           </tbody>

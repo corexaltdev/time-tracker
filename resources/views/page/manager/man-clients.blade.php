@@ -7,7 +7,10 @@
             <h1 class="t-4">Clients</h1>
         </div>
         <div class="col-1">
-            <button class="btn t-2 bg-4 btn-md mt-2">Create</button>
+            <form method="GET" action="{{ route('man-create-client') }}" class="">
+                @csrf
+                <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Create</button>
+            </form>
         </div>
     </div>
     <div class="row">
@@ -28,9 +31,15 @@
                                 <td>testDev</td>
                                 <td>developer@gmail.com</td>
                                 <td>Available</td>
-                                <td>
-                                    <button class="btn t-1 bg-4 btn-md mt-2">Edit</button>
-                                    <button class="btn t-1 bg-4 btn-md mt-2">Suspend</button>
+                                <td style="display: inline-block;">
+                                    <form method="GET" action="{{ route('man-edit-client') }}" style="display:inline;">
+                                        @csrf
+                                        <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Edit</button>
+                                    </form>
+                                    <form method="GET" style="display:inline;">
+                                        @csrf
+                                        <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Suspend</button>
+                                    </form>
                                 </td>
                             </tr>
                           </tbody>

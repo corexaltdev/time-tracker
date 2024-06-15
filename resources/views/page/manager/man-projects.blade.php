@@ -34,7 +34,10 @@
                                 <td>Feed</td>
                                 <td>Pending</td>
                                 <td>
-                                    <button class="btn t-1 bg-4 btn-md mt-2">Update</button>
+                                    <form method="GET" action="{{ route('man-update-projects') }}" class="">
+                                        @csrf
+                                        <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Update</button>
+                                    </form>
                                 </td>
                             </tr>
                           </tbody>

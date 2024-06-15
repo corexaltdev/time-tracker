@@ -32,7 +32,10 @@
                                 </td>
                                 <td>Feed</td>
                                 <td>
-                                    <button class="btn t-1 bg-4 btn-md mt-2">Feedback</button>
+                                    <form method="GET" action="{{ route('cl-feedback') }}" class="">
+                                        @csrf
+                                        <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Feedback</button>
+                                    </form>
                                 </td>
                             </tr>
                           </tbody>

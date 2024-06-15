@@ -6,11 +6,19 @@ body {
     color: #e0fbfc;
 }
 
+.t-1:hover {
+    color: #e0fbfc;
+}
+
 .bg-1 {
     background-color: #e0fbfc;
 }
 
 .t-2 {
+    color: #98c1d9;
+}
+
+.t-2:hover {
     color: #98c1d9;
 }
 

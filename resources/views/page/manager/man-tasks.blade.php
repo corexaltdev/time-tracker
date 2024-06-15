@@ -7,7 +7,10 @@
             <h1 class="t-4">Tasks</h1>
         </div>
         <div class="col-1">
-            <button class="btn t-2 bg-4 btn-md mt-2">Create</button>
+            <form method="GET" action="{{ route('man-create-task') }}" class="">
+                @csrf
+                <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Create</button>
+            </form>
         </div>
     </div>
     <div class="row">
@@ -41,20 +44,10 @@
                                 </td>
                                 <td>Feed</td>
                                 <td>
-                                    <button class="btn t-1 bg-4 btn-md mt-2">Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Delete Old Button</td>
-                                <td>blablablablab</td>
-                                <td> 
-                                    <div class="progress" style="height: 20px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 50%;" ></div>
-                                    </div>
-                                </td>
-                                <td>Feed</td>
-                                <td>
-                                    <button class="btn t-1 bg-4 btn-md mt-2">Edit</button>
+                                    <form method="GET" action="{{ route('man-edit-task') }}" class="">
+                                        @csrf
+                                        <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Edit Task</button>
+                                    </form>
                                 </td>
                             </tr>
                           </tbody>
