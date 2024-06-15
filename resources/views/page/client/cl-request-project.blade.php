@@ -9,17 +9,20 @@
         <div class="card dashboard-card">
             <div class="card-body">
                 <div class="row">
-                    <div class="mb-3">
-                        <label class="form-label t-4">Name </label>
-                        <input class="form-control"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label t-4">Description </label>
-                        <input class="form-control"></input>
-                    </div>
-                    <div class="mb-3">
-                        <button class="btn t-2 bg-4 btn-lg">Request</button>
-                    </div>
+                    <form method="POST" action="{{ route('request-project') }}" class="">
+                        @csrf
+                        <div class="mb-3">
+                            <label class="form-label t-4">Name </label>
+                            <input class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label t-4">Description </label>
+                            <input class="form-control" id="description" name="description" required>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Request</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

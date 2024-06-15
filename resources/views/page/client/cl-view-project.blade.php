@@ -22,15 +22,14 @@
                             </tr>
                           </thead>
                           <tbody>
+                            @foreach($projects as $p)
                             <tr>
-                                <td>Project A</td>
-                                <td>Developer</td>
+                                <td>{{$p->name}}</td>
+                                <td>{{$p->description}}</td>
                                 <td> 
-                                    <div class="progress" style="height: 20px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 50%;" ></div>
-                                    </div>
+                                    {{$p->status}}
                                 </td>
-                                <td>Feed</td>
+                                <td>{{$p->feedback}}</td>
                                 <td>
                                     <form method="GET" action="{{ route('cl-feedback') }}" class="">
                                         @csrf
@@ -38,6 +37,7 @@
                                     </form>
                                 </td>
                             </tr>
+                            @endforeach
                           </tbody>
                     </table>
                 </div>

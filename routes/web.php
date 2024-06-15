@@ -11,6 +11,9 @@ use App\Http\Middleware\OnlyClient;
 use App\Http\Middleware\OnlyDeveloper;
 use App\Http\Middleware\OnlyManager;
 
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ProjectController;
+
 
 Route::get('/', function () {
     // return Inertia::render('Welcome', [
@@ -53,26 +56,19 @@ Route::middleware(['auth', 'verified',OnlyAdmin::class])->group(function () {
 
 });
 
-Route::middleware(['auth', 'verified',OnlyClient::class])->group(function () {
+Route::middleware(['auth', 'verified', OnlyClient::class])->group(function () {
 
-    Route::get('/cl-view-project', function () {
-        $role = Auth::user()->role; 
-        return view('page.client.cl-view-project',['role' => $role]);
-    })->name('cl-view-project');
+    Route::get('/cl-view-project', [ClientController::class, 'viewProject'])->name('cl-view-project');
 
-    Route::get('/cl-request-project', function () {
-        $role = Auth::user()->role; 
-        return view('page.client.cl-request-project',['role' => $role]);
-    })->name('cl-request-project');
+    Route::get('/cl-request-project', [ClientController::class, 'requestProject'])->name('cl-request-project');
 
-    Route::get('/cl-feedback', function () {
-        $role = Auth::user()->role; 
-        return view('page.client.cl-feedback',['role' => $role]);
-    })->name('cl-feedback');
+    Route::get('/cl-feedback', [ClientController::class, 'feedback'])->name('cl-feedback');
+
+    Route::post('/request-project', [ProjectController::class, 'store'])->name('request-project');
 
 });
 
-Route::middleware(['auth', 'verified',OnlyDeveloper::class])->group(function () {
+Route::middleware(['auth', 'verified', OnlyDeveloper::class])->group(function () {
     
     Route::get('/dev-modify-info', function () {
         $role = Auth::user()->role; 
