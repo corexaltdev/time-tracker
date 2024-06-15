@@ -8,15 +8,19 @@
     <div class="row">
         <div class="card dashboard-card">
             <div class="card-body">
-                <div class="row">
-                    <div class="mb-3">
-                        <label class="form-label t-4">Feedback </label>
-                        <input class="form-control"></input>
+                <form method="POST" action="{{ route('update-feedback', ['id' => $id]) }}">
+                    @csrf
+                    @method('PATCH')
+                    <div class="row">
+                        <div class="mb-3">
+                            <label for="feedback" class="form-label t-4">Feedback </label>
+                            <input type="text" id="feedback" name="feedback" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn t-2 bg-4 btn-lg">Update Feedback</button>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <button class="btn t-2 bg-4 btn-lg">Add</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

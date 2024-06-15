@@ -62,9 +62,11 @@ Route::middleware(['auth', 'verified', OnlyClient::class])->group(function () {
 
     Route::get('/cl-request-project', [ClientController::class, 'requestProject'])->name('cl-request-project');
 
-    Route::get('/cl-feedback', [ClientController::class, 'feedback'])->name('cl-feedback');
+    Route::get('/cl-feedback/{id}', [ClientController::class, 'feedback'])->name('cl-feedback');
 
     Route::post('/request-project', [ProjectController::class, 'store'])->name('request-project');
+
+    Route::patch('/cl-feedback/{id}/update-feedback', [ProjectController::class, 'updateFeedback'])->name('update-feedback');
 
 });
 

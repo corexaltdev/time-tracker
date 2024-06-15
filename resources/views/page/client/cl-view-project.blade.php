@@ -31,7 +31,7 @@
                                 </td>
                                 <td>{{$p->feedback}}</td>
                                 <td>
-                                    <form method="GET" action="{{ route('cl-feedback') }}" class="">
+                                    <form method="GET" action="{{ route('cl-feedback', ['id'=> $p->id]) }}" class="">
                                         @csrf
                                         <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Feedback</button>
                                     </form>

@@ -22,9 +22,9 @@ class ClientController extends Controller
         return view('page.client.cl-request-project',['role' => $role]);
     }
 
-    public function feedback()
+    public function feedback($id)
     {   
         $role = Auth::user()->role;
-        return view('page.client.cl-feedback',['role' => $role]);
+        return view('page.client.cl-feedback',['role' => $role,'id' => $id]);
     }
 }

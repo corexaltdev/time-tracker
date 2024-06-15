@@ -27,4 +27,18 @@ class ProjectController extends Controller
         // Redirect to a success page or back to the form
         return redirect()->route('cl-view-project')->with('success', 'Project created successfully!');
     }
+
+    public function updateFeedback($id)
+    {
+        $validatedData = request()->validate([
+            'feedback' => 'required|string',
+        ]);
+
+        // Update the feedback in the database
+        $project = Project::findOrFail($id);
+        $project->feedback = $validatedData['feedback'];
+        $project->save();
+
+        return redirect()->route('cl-view-project', ['id' => $id])->with('success', 'Feedback updated successfully');
+    }
 }
