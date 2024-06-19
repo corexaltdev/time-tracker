@@ -17,7 +17,7 @@ class UserController extends Controller
             'name' => 'required|string',
             'email' => 'required|string|email',
             'password' => 'required|string|min:8',
-            'role' => 'required|string'
+            'role' => 'required|string',
         ]);
 
         // Create a new user
@@ -27,6 +27,12 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->role = Str::lower($request->role);
         $user->save();
+
+        $currentUser = Auth::user();
+
+        if ($currentUser->role == 'manager') {
+            return redirect()->route('man-clients')->with('success', 'User created successfully!');
+        } 
 
         // Redirect to a specific route or view
         return redirect()->route('ad-manage-account')->with('success', 'User created successfully!');
@@ -60,6 +66,12 @@ class UserController extends Controller
 
         $user->save();
 
+        $currentUser = Auth::user();
+
+        if ($currentUser->role == 'manager') {
+            return redirect()->route('man-clients')->with('success', 'User created successfully!');
+        } 
+
         // Redirect to a specific route or view
         return redirect()->route('ad-manage-account')->with('success', 'User updated successfully!');
     }
@@ -70,5 +82,21 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('ad-manage-account')->with('success', 'User deleted successfully!');
+    }
+
+    public function suspend($id)
+    {
+    
+        $user = User::findOrFail($id);
+
+        if($user->role == 'client'){
+            $user->role = 'clientX';
+        }elseif($user->role == 'clientX'){
+            $user->role = 'client';
+        }
+
+        $user->save();
+
+        return redirect()->route('man-clients')->with('success', 'Suspension Success');
     }
 }

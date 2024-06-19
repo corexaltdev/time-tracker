@@ -8,22 +8,26 @@
     <div class="row">
         <div class="card dashboard-card">
             <div class="card-body">
-                <div class="row">
-                    <div class="mb-3">
-                        <h3>Project Name</h3>
-                        <h5>Project A</h5>
-                    </div>
-                    <div class="mb-3">
-                        <h3>Project Status</h3>
-                        <h5>
-                            <div class="progress" style="height: 20px;">
-                                <div class="progress-bar" role="progressbar" style="width: 50%;" ></div>
-                            </div>
-                        </h5>
-                    </div>
-                    <div class="mb-3">
-                        <button class="btn t-1 bg-4 btn-lg">Update</button>
-                    </div>
+                <form method="POST" action="{{ route('update-project', ['id' => $id]) }}">
+                    @csrf
+                    @method('PATCH')
+                    <div class="row">
+                        <div class="mb-3">
+                            <h3>Project Name</h3>
+                            <h5>{{ $project->name }}</h5>
+                        </div>
+                        <div class="mb-3">
+                            <h3>Project Status</h3>
+                            <h5>
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 50%;" ></div>
+                                </div>
+                            </h5>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn t-1 bg-4 btn-lg" type=submit>Update</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

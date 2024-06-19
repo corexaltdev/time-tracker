@@ -41,4 +41,14 @@ class ProjectController extends Controller
 
         return redirect()->route('cl-view-project', ['id' => $id])->with('success', 'Feedback updated successfully');
     }
+
+    public function updateStatus($id)
+    {
+
+        $project = Project::findOrFail($id);
+        $project->status = "approved";
+        $project->save();
+
+        return redirect()->route('man-projects', ['id' => $id])->with('success', 'Project updated successfully');
+    }
 }

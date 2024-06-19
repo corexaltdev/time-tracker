@@ -18,28 +18,26 @@
                               <th scope="col">Description</th>
                               <th scope="col">Status</th>
                               <th scope="col">Feedback</th>
-                              <th scope="col">Project Status</th>
                               <th scope="col">Action</th>
                             </tr>
                           </thead>
                           <tbody>
+                            @foreach($projects as $p)
                             <tr>
-                                <td>Project A</td>
-                                <td>Developer</td>
+                                <td>{{$p->name}}</td>
+                                <td>{{$p->description}}</td>
                                 <td> 
-                                    <div class="progress" style="height: 20px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 50%;" ></div>
-                                    </div>
+                                    {{$p->status}}
                                 </td>
-                                <td>Feed</td>
-                                <td>Pending</td>
+                                <td>{{$p->feedback}}</td>
                                 <td>
-                                    <form method="GET" action="{{ route('man-update-projects') }}" class="">
+                                    <form method="GET" action="{{ route('man-update-projects', ['id'=> $p->id]) }}" class="">
                                         @csrf
                                         <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Update</button>
                                     </form>
                                 </td>
                             </tr>
+                            @endforeach
                           </tbody>
                     </table>
                 </div>
