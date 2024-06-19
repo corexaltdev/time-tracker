@@ -12,7 +12,13 @@ use App\Http\Middleware\OnlyDeveloper;
 use App\Http\Middleware\OnlyManager;
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DevController;
+
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TaskController;
 
 
 Route::get('/', function () {
@@ -39,20 +45,17 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'verified',OnlyAdmin::class])->group(function () { 
 
-    Route::get('/ad-manage-account', function () {
-        $role = Auth::user()->role;
-        return view('page.admin.ad-manage-account', ['role' => $role]);
-    })->name('ad-manage-account');
+    Route::get('/ad-manage-account', [AdminController::class, 'manageAccount'])->name('ad-manage-account');
 
-    Route::get('/ad-create-account', function () {
-        $role = Auth::user()->role;
-        return view('page.admin.ad-create-account', ['role' => $role]);
-    })->name('ad-create-account');
+    Route::get('/ad-create-account', [AdminController::class, 'createAccount'])->name('ad-create-account');
 
-    Route::get('/ad-edit-account', function () {
-        $role = Auth::user()->role;
-        return view('page.admin.ad-edit-account', ['role' => $role]);
-    })->name('ad-edit-account');
+    Route::get('/ad-edit-account/{id}', [AdminController::class, 'editAccount'])->name('ad-edit-account');
+
+    Route::post('/create-acc', [UserController::class, 'store'])->name('create-acc');
+
+    Route::put('/ad-edit-account/{id}/edit', [UserController::class, 'update'])->name('edit-acc');
+
+    Route::delete('/del-acc/{id}', [UserController::class, 'destroy'])->name('del-acc');
 
 });
 
