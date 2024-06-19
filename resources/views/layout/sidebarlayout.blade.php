@@ -4,7 +4,6 @@
 <div class="d-flex">
     <div class="sidebar ">
         <div>
-            <h3 class="t-1 text-center"> Username </h3>
             <h4 class="t-1 text-center"> {{ Str::ucfirst($role) }} </h4>
         </div>
         <ul class="list-unstyled px-4">

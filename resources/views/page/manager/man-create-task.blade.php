@@ -9,17 +9,20 @@
         <div class="card dashboard-card">
             <div class="card-body">
                 <div class="row">
-                    <div class="mb-3">
-                        <label class="form-label t-4">Task Name </label>
-                        <input class="form-control"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label t-4">Description </label>
-                        <input class="form-control"></input>
-                    </div>
-                    <div class="mb-3">
-                        <button class="btn t-2 bg-4 btn-lg">Create</button>
-                    </div>
+                    <form method="POST" action="{{ route('create-task', ['id'=> $id]) }}" class="">
+                        @csrf
+                        <div class="mb-3">
+                            <label class="form-label t-4">Task Name </label>
+                            <input class="form-control" id="name" name="name" required></input>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label t-4">Description </label>
+                            <input class="form-control" id="description" name="description" required></input>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn t-2 bg-4 btn-lg" type="submit">Create</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

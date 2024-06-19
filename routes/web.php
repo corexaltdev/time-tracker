@@ -90,18 +90,22 @@ Route::middleware(['auth', 'verified',OnlyManager::class])->group(function () {
     Route::get('/man-clients', [ManagerController::class, 'viewClients'])->name('man-clients');
     Route::get('/man-projects', [ManagerController::class, 'viewProjects'])->name('man-projects');
     Route::get('/man-tasks', [ManagerController::class, 'viewTasks'])->name('man-tasks');
+    Route::get('/man-display-tasks/{id}', [ManagerController::class, 'displayTasks'])->name('man-display-tasks');
 
     Route::get('/man-create-client', [ManagerController::class, 'createClient'])->name('man-create-client');
-    Route::get('/man-create-task', [ManagerController::class, 'createTask'])->name('man-create-task');
+    Route::get('/man-create-task/{id}', [ManagerController::class, 'createTask'])->name('man-create-task');
 
     Route::get('/man-edit-client/{id}', [ManagerController::class, 'editClient'])->name('man-edit-client');
-    Route::get('/man-edit-task', [ManagerController::class, 'editTask'])->name('man-edit-task');
+    Route::get('/man-edit-task/{id}', [ManagerController::class, 'editTask'])->name('man-edit-task');
 
     Route::get('/man-update-projects/{id}', [ManagerController::class, 'updateProjects'])->name('man-update-projects');
 
     Route::post('/create-cl', [UserController::class, 'store'])->name('create-cl');
     Route::put('/man-edit-client/{id}/edit', [UserController::class, 'update'])->name('edit-cl');
     Route::patch('/suspend-cl/{id}', [UserController::class, 'suspend'])->name('suspend-cl');
+
+    Route::post('/create-task/{id}', [TaskController::class, 'store'])->name('create-task');
+    Route::patch('/edit-task/{id}/', [TaskController::class, 'editTask'])->name('edit-task');
 
     Route::patch('/update-project/{id}', [ProjectController::class, 'updateStatus'])->name('update-project');
 
