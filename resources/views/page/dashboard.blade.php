@@ -52,18 +52,17 @@
                         </form>
                     </div>
                     <div class="col-3">
+                        <form method="GET" action="{{ route('dev-chat') }}" class="btn card bg-1">
+                            @csrf
+                            <button type="submit" class="card-body btn">Chat</button>
+                        </form>
+                    </div>
+                    {{-- <div class="col-3">
                         <form method="GET" action="{{ route('dev-team') }}" class="btn card bg-1">
                             @csrf
                             <button type="submit" class="card-body btn">Team</button>
                         </form>
-                    </div>
-                    <div class="col-3">
-                        <div class="btn card bg-1">
-                            <div class="card-body">
-                                <h5 class="t-4"> Chat </h5>
-                            </div>
-                        </div>
-                    </div>
+                    </div> --}}
                     @else
                     <div class="col-3">
                         <form method="GET" action="{{ route('cl-request-project') }}" class="btn card bg-1">

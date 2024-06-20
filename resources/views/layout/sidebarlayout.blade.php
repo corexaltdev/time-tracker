@@ -46,14 +46,14 @@
                     <button type="submit" class="btn t-1">Tasks</button>
                 </form>
             </li>
-            <li class="t-1 py-1">
+            {{-- <li class="t-1 py-1">
                 <form method="GET" action="{{ route('dev-team') }}" class="">
                     @csrf
                     <button type="submit" class="btn t-1">Team</button>
                 </form>
-            </li>
+            </li> --}}
             <li class="t-1 py-1">
-                <form method="GET" class="">
+                <form method="GET" action="{{ route('dev-chat') }}" class="">
                     @csrf
                     <button type="submit" class="btn t-1">Chat</button>
                 </form>

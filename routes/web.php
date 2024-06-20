@@ -71,11 +71,19 @@ Route::middleware(['auth', 'verified', OnlyDeveloper::class])->group(function ()
     Route::get('/dev-modify-info', [DevController::class, 'modifyInfo'])->name('dev-modify-info');
     Route::get('/dev-tasks', [DevController::class, 'tasks'])->name('dev-tasks');
     Route::get('/dev-update-tasks/{id}', [DevController::class, 'updateTasks'])->name('dev-update-tasks');
-    Route::get('/dev-team', [DevController::class, 'team'])->name('dev-team');
+    // Route::get('/dev-team', [DevController::class, 'team'])->name('dev-team');
+    // Route::get('/dev-team-create', [DevController::class, 'teamCreate'])->name('dev-team-create');
+    Route::get('/dev-chat', [DevController::class, 'chat'])->name('dev-chat');
+    Route::get('/dev-message/{id}', [DevController::class, 'message'])->name('dev-message');
+    Route::post('/send-msg/{id}', [DevController::class, 'sendMessage'])->name('send-msg');
 
     Route::put('/dev-modify-info/{id}', [UserController::class, 'update'])->name('modify-info');
     Route::get('/dev-display-tasks/{id}', [DevController::class, 'displayTasks'])->name('dev-display-tasks');
     Route::patch('/dev-update-progress/{id}', [TaskController::class, 'updateProgress'])->name('dev-update-progress');
+
+    // Route::post('/dev-create-team', [DevController::class, 'createTeam'])->name('create-team');
+    // Route::post('/join-team/{id}', [DevController::class, 'joinTeam'])->name('join-team');
+
 
 });
 

@@ -13,7 +13,7 @@
                 <div class="row mb-2">
                     <select class="form-select bg-2" name="project_id" id="projectSelect">
                         @foreach($projects as $p)
-                            <option value="{{ $p->id }}">{{ $p-> name}}</option>
+                            <option value="{{ $p->id }}">{{ $p->name}}</option>
                         @endforeach
                     </select>
                     <form method="GET" id="disp" action="{{ route('dev-display-tasks', ['id'=> ':projectId']) }}" class="" style="display:inline;">
