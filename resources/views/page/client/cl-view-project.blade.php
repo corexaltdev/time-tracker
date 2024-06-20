@@ -35,6 +35,10 @@
                                         @csrf
                                         <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Feedback</button>
                                     </form>
+                                    <form method="GET" action="{{ route('generate-pdf') }}" class="">
+                                        @csrf
+                                        <button type="submit" class="btn t-1 bg-4 btn-md mt-2">PDF</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

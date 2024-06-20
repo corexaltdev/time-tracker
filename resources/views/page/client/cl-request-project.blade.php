@@ -9,7 +9,7 @@
         <div class="card dashboard-card">
             <div class="card-body">
                 <div class="row">
-                    <form method="POST" action="{{ route('create-task') }}" class="">
+                    <form method="POST" action="{{ route('request-project') }}" class="">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label t-4">Name </label>
