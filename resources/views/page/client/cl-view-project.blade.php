@@ -35,7 +35,17 @@
                                         @csrf
                                         <button type="submit" class="btn t-1 bg-4 btn-md mt-2">Feedback</button>
                                     </form>
-                                    <form method="GET" action="{{ route('generate-pdf') }}" class="">
+                                    @php
+                                        $data = [
+                                            'name' => $p->name,
+                                            'desc' => $p->desc,
+                                            'stats' => $p->status,
+                                            'feed' => $p->feedback
+                                        ];
+
+                                        $dataString = http_build_query($data);
+                                    @endphp
+                                    <form method="GET" action="{{ route('generate-pdf', $dataString) }}" class="">
                                         @csrf
                                         <button type="submit" class="btn t-1 bg-4 btn-md mt-2">PDF</button>
                                     </form>

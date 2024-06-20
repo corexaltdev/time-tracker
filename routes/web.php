@@ -36,7 +36,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () { 
 
-    Route::get('/generate-pdf', [PDFController::class, 'generatePDF'])->name('generate-pdf');
+    Route::get('/generate-pdf/{data}', [PDFController::class, 'generatePDF'])->name('generate-pdf');
 
 });
 
