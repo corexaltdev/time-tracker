@@ -47,6 +47,12 @@
                 </form>
             </li>
             <li class="t-1 py-1">
+                <form method="GET" action="{{ route('dev-team') }}" class="">
+                    @csrf
+                    <button type="submit" class="btn t-1">Team</button>
+                </form>
+            </li>
+            <li class="t-1 py-1">
                 <form method="GET" class="">
                     @csrf
                     <button type="submit" class="btn t-1">Chat</button>

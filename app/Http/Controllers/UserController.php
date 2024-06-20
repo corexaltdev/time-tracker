@@ -71,6 +71,9 @@ class UserController extends Controller
         if ($currentUser->role == 'manager') {
             return redirect()->route('man-clients')->with('success', 'User created successfully!');
         } 
+        else if ($currentUser->role == 'developer') {
+            return redirect()->route('dashboard')->with('success', 'User created successfully!');
+        }
 
         // Redirect to a specific route or view
         return redirect()->route('ad-manage-account')->with('success', 'User updated successfully!');

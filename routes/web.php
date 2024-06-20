@@ -67,21 +67,15 @@ Route::middleware(['auth', 'verified', OnlyClient::class])->group(function () {
 });
 
 Route::middleware(['auth', 'verified', OnlyDeveloper::class])->group(function () {
-    
-    Route::get('/dev-modify-info', function () {
-        $role = Auth::user()->role; 
-        return view('page.developer.dev-modify-info',['role' => $role]);
-    })->name('dev-modify-info');
 
-    Route::get('/dev-tasks', function () {
-        $role = Auth::user()->role; 
-        return view('page.developer.dev-tasks',['role' => $role]);
-    })->name('dev-tasks');
+    Route::get('/dev-modify-info', [DevController::class, 'modifyInfo'])->name('dev-modify-info');
+    Route::get('/dev-tasks', [DevController::class, 'tasks'])->name('dev-tasks');
+    Route::get('/dev-update-tasks/{id}', [DevController::class, 'updateTasks'])->name('dev-update-tasks');
+    Route::get('/dev-team', [DevController::class, 'team'])->name('dev-team');
 
-    Route::get('/dev-update-tasks', function () {
-        $role = Auth::user()->role; 
-        return view('page.developer.dev-update-tasks',['role' => $role]);
-    })->name('dev-update-tasks');
+    Route::put('/dev-modify-info/{id}', [UserController::class, 'update'])->name('modify-info');
+    Route::get('/dev-display-tasks/{id}', [DevController::class, 'displayTasks'])->name('dev-display-tasks');
+    Route::patch('/dev-update-progress/{id}', [TaskController::class, 'updateProgress'])->name('dev-update-progress');
 
 });
 

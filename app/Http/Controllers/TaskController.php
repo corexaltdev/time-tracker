@@ -36,12 +36,26 @@ class TaskController extends Controller
             'description' => 'required|string',
         ]);
 
-        // Update the feedback in the database
         $task = Task::findOrFail($id);
         $task->name = $validatedData['name'];
         $task->description = $validatedData['description'];
         $task->save();
 
         return redirect()->route('man-tasks')->with('success', 'Task updated successfully');
+    }
+
+    public function updateProgress($id)
+    {
+        $validatedData = request()->validate([
+            'progress' => 'required',
+            'duration' => 'required',
+        ]);
+
+        $task = Task::findOrFail($id);
+        $task->progress = $validatedData['progress'];
+        $task->duration = $validatedData['duration'];
+        $task->save();
+
+        return redirect()->route('dev-tasks')->with('success', 'Task updated successfully');
     }
 }
