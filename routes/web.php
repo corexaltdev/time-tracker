@@ -43,7 +43,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::get('/dashboard', function () {
     $role = Auth::user()->role; 
     if($role == 'clientX'){
-        return redirect('/no-access');
+        return redirect('/suspended');
     }
     return view('page.dashboard',  ['role' => $role]);
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -127,6 +127,11 @@ Route::middleware(['auth', 'verified',OnlyManager::class])->group(function () {
 Route::get('/no-access', function () {
     $role = Auth::user()->role; 
     return view('page.no-access', ['role' => $role]);
+});
+
+Route::get('/suspended', function () {
+    $role = Auth::user()->role; 
+    return view('page.client.cl-suspended', ['role' => $role]);
 });
 
 require __DIR__.'/auth.php';
