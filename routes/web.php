@@ -42,6 +42,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/dashboard', function () {
     $role = Auth::user()->role; 
+    if($role == 'clientX'){
+        return redirect('/no-access');
+    }
     return view('page.dashboard',  ['role' => $role]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 

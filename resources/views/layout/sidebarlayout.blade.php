@@ -55,7 +55,7 @@
             <li class="t-1 py-1">
                 <form method="GET" action="{{ route('dev-chat') }}" class="">
                     @csrf
-                    <button type="submit" class="btn t-1">Chat</button>
+                    <button type="submit" class="btn t-1">Notes</button>
                 </form>
             </li>
             @else

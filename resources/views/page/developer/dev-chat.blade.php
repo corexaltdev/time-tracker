@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
-            <h1 class="t-4">Tasks</h1>
+            <h1 class="t-4">Notes</h1>
         </div>
     </div>
     <div class="row">
@@ -18,14 +18,14 @@
                     </select>
                     <form method="GET" id="chat" action="{{ route('dev-message', ['id'=> ':chatId']) }}" class="" style="display:inline;">
                         @csrf
-                        <button type="submit" class="btn t-1 bg-4 btn-sm mt-1">Open Messages</button>
+                        <button type="submit" class="btn t-1 bg-4 btn-sm mt-1">Open Notes </button>
                     </form>
                 </div>
                 <div class="row mb-1">
                     <form method="POST" id="send" action="{{ route('send-msg', ['id'=> ':chatId']) }}" class="" style="display:inline;">
                         @csrf
                         <input class="form-control" id="content" name="content" required>
-                        <button type="submit" class="btn t-1 bg-4 btn-sm mt-1">Send Message</button>
+                        <button type="submit" class="btn t-1 bg-4 btn-sm mt-1">Send Notes </button>
                     </form>
                 </div>
                 @foreach($msg as $m)

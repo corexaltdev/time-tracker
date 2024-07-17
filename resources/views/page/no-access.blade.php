@@ -10,6 +10,14 @@
             <div class="mb-3">
                 <h4 class="t-2 text-center"> Please Return to previous page </h4>
             </div>
+            <div class="mb-3">
+                <h4 class="t-2 text-center"> 
+                    <form method="POST" action="{{ route('logout') }}" class="">
+                        @csrf
+                        <button type="submit" class="btn t-1">Logout</button>
+                    </form>
+                </h4>
+            </div>
         </div>
     </div>
 </div>
